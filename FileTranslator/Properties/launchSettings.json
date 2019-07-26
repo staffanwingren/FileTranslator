@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FileTranslator": {
+      "commandName": "Project",
+      "commandLineArgs": "-in \"D:\\kw_report\\SpecialReport 2019-07-26.csv\" -out \"D:\\kw_report\\SpecialReport 2019-07-26.json\""
+    }
+  }
+}
