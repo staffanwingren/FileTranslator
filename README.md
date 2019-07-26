@@ -11,6 +11,7 @@ ft.exe -in .\input.csv -out .\output.json
 ```
 
 List of possible arguments:
+
 | Argument | Shortcut | Description | Example |
 | -------- | -------- | ----------- | ------- |
 | -in      |          | The input file path. Required! | -In C:\myinfile.ext |
