@@ -26,7 +26,7 @@ namespace FileTranslator
         public string Printer { get; set; }
 
         public bool IsValid => !string.IsNullOrWhiteSpace(In) &&
-                               !string.IsNullOrWhiteSpace(Out) &&
+                               //!string.IsNullOrWhiteSpace(Out) &&
                                //!string.IsNullOrWhiteSpace(Model) &&
                                !string.IsNullOrWhiteSpace(Parser) &&
                                !string.IsNullOrWhiteSpace(Printer) &&

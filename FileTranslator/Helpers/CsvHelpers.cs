@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
+using System.Linq;
 
 namespace FileTranslator.Helpers
 {
@@ -16,6 +14,7 @@ namespace FileTranslator.Helpers
         public static (char, string[]) DetectCsvFormat(this string line)
         {
             var delimiter = line.DetectCsvDelimiter();
+            line = line.Trim().TrimEnd(delimiter);
             var values = line.Split(delimiter);
             return (delimiter, values);
         }

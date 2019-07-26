@@ -32,7 +32,7 @@ namespace FileTranslator.Parsers
                 var values = line.Split(Delimiter);
 
                 var instance = Activator.CreateInstance<T>();
-                for (var i = 0; i < Math.Max(headers.Length, values.Length); i++)
+                for (var i = 0; i < Math.Min(headers.Length, values.Length); i++)
                 {
                     var propertyName = headers[i].Replace(" ", string.Empty);
                     var propertyInfo = instance.GetType().GetProperty(propertyName);

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Text;
 using FileTranslator.Helpers;
 
 namespace FileTranslator.ModelGenerators
@@ -15,13 +9,15 @@ namespace FileTranslator.ModelGenerators
         public Type GenerateModel(StreamReader reader)
         {
             string[] headers = {};
-            while (!reader.EndOfStream)
+            var hasDetectedHeaders = false;
+            while (!hasDetectedHeaders && !reader.EndOfStream)
             {
                 var line = reader.ReadLine();
                 (_, headers) = line.DetectCsvFormat();
+                hasDetectedHeaders = headers != null;
             }
 
-            return typeof(object);
+            return headers.GenerateTypeFromHeaders();
         }
     }
 }
